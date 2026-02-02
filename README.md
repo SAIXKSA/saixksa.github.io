@@ -1,5 +1,4 @@
-[pc-store.html](https://github.com/user-attachments/files/25017091/pc-store.html)
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
