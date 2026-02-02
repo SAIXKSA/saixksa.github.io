@@ -1,16 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#1a5f3f">
     <meta name="description" content="متجر متخصص في بيع قطع الحاسب الآلي عالية الجودة مع محتوى تعليمي شامل">
-    <meta name="keywords" content="قطع حاسب, كمبيوتر, معالجات, كروت شاشة, ذاكرة عشوائية">
     <title>متجر قطع الحاسب الآلي - PC Hardware Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --kku-green: #1a5f3f;
@@ -27,72 +27,81 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
             background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
             color: var(--dark);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, var(--kku-dark-green) 0%, var(--kku-green) 100%);
-            padding: 0;
-            box-shadow: 0 8px 24px rgba(26, 95, 63, 0.3);
+            box-shadow: 0 4px 20px rgba(26, 95, 63, 0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
-            animation: slideDown 0.6s ease-out;
+            animation: slideDown 0.5s ease-out;
         }
 
         @keyframes slideDown {
             from {
                 transform: translateY(-100%);
-                opacity: 0;
             }
             to {
                 transform: translateY(0);
-                opacity: 1;
             }
         }
 
         .header-top {
             background: var(--kku-dark-green);
-            padding: 12px 0;
+            padding: 15px 0;
             border-bottom: 2px solid var(--kku-gold);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .header-top .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .logo {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--kku-green);
             border: 3px solid var(--kku-gold);
             box-shadow: 0 4px 12px rgba(201, 150, 43, 0.4);
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .logo:hover {
@@ -100,119 +109,106 @@
         }
 
         .brand-text h1 {
-            font-family: 'Amiri', serif;
+            font-family: 'Tajawal', sans-serif;
             color: var(--kku-gold);
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .brand-text p {
             color: var(--white);
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 300;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .header-actions {
             display: flex;
-            gap: 25px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .action-btn {
             background: transparent;
             border: 2px solid var(--kku-gold);
             color: var(--white);
-            padding: 10px 24px;
+            padding: 10px 20px;
             border-radius: 25px;
             cursor: pointer;
             font-family: 'Cairo', sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            white-space: nowrap;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .action-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
+        .action-btn:hover,
+        .action-btn:active {
             background: var(--kku-gold);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-            z-index: -1;
-        }
-
-        .action-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .action-btn:hover {
             color: var(--kku-dark-green);
-            border-color: var(--kku-gold);
+            transform: translateY(-2px);
         }
 
         /* Navigation */
         nav {
             background: var(--kku-green);
-            padding: 18px 0;
+            padding: 0;
         }
 
-        nav .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 2px solid var(--kku-gold);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 10px auto;
+            width: calc(100% - 40px);
+            max-width: 300px;
+            min-height: 48px;
+            font-weight: bold;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 15px 0;
         }
 
         nav ul li a {
             color: var(--white);
             text-decoration: none;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 8px;
             transition: all 0.3s ease;
-            position: relative;
+            display: block;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
 
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: var(--kku-gold);
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        nav ul li a:hover::after {
-            width: 80%;
+        nav ul li a:hover,
+        nav ul li a:active {
+            background: rgba(255, 255, 255, 0.15);
         }
 
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--kku-green) 0%, var(--kku-light-green) 100%);
-            padding: 80px 30px;
+            padding: 60px 20px;
             position: relative;
             overflow: hidden;
         }
@@ -222,9 +218,9 @@
             position: absolute;
             top: -50%;
             right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201, 150, 43, 0.2) 0%, transparent 70%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 150, 43, 0.15) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
 
@@ -240,40 +236,29 @@
         }
 
         .hero-content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             text-align: center;
             position: relative;
             z-index: 1;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero h2 {
-            font-family: 'Amiri', serif;
-            font-size: 56px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 42px;
             color: var(--white);
             margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             font-weight: 700;
+            line-height: 1.4;
         }
 
         .hero p {
-            font-size: 22px;
+            font-size: 18px;
             color: var(--white);
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             line-height: 1.8;
-            max-width: 900px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -281,245 +266,180 @@
         .hero-btn {
             background: var(--kku-gold);
             color: var(--white);
-            padding: 18px 50px;
+            padding: 16px 40px;
             border: none;
             border-radius: 30px;
             font-size: 18px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 20px rgba(201, 150, 43, 0.4);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(201, 150, 43, 0.4);
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-btn:hover {
+        .hero-btn:hover,
+        .hero-btn:active {
             background: var(--white);
             color: var(--kku-green);
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(201, 150, 43, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(201, 150, 43, 0.6);
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 30px;
-            max-width: 1400px;
-            margin: 0 auto;
+        /* Section Title */
+        .section {
+            padding: 60px 20px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-family: 'Amiri', serif;
-            font-size: 42px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 36px;
             color: var(--kku-green);
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
+            font-weight: 700;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
+            width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, transparent, var(--kku-gold), transparent);
+            background: var(--kku-gold);
         }
 
         .section-title p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--gray);
             max-width: 700px;
             margin: 20px auto 0;
             line-height: 1.8;
         }
 
-        .features-grid {
+        /* Grid Layouts */
+        .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-
-        .feature-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            border-top: 5px solid var(--kku-gold);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--kku-green) 0%, var(--kku-light-green) 100%);
-            opacity: 0;
-            transition: all 0.6s ease;
-            z-index: 0;
-        }
-
-        .feature-card:hover::before {
-            left: 0;
-            opacity: 0.95;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 45px rgba(26, 95, 63, 0.2);
-        }
-
-        .feature-card-content {
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s ease;
-        }
-
-        .feature-card:hover .feature-card-content h3,
-        .feature-card:hover .feature-card-content p {
-            color: var(--white);
-        }
-
-        .feature-icon {
-            font-size: 52px;
-            margin-bottom: 25px;
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-
-        .feature-card h3 {
-            font-size: 24px;
-            color: var(--kku-green);
-            margin-bottom: 15px;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
-
-        .feature-card p {
-            font-size: 16px;
-            color: var(--gray);
-            line-height: 1.8;
-            transition: color 0.3s ease;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 80px 30px;
-            background: var(--light-gray);
-        }
-
-        .products-container {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-
-        .product-card {
+        /* Feature Card */
+        .feature-card {
             background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            border: 3px solid transparent;
+            padding: 35px 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--kku-gold);
+            text-align: center;
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 45px rgba(26, 95, 63, 0.2);
-            border-color: var(--kku-gold);
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(26, 95, 63, 0.15);
         }
 
-        .product-image {
-            height: 280px;
-            background: linear-gradient(135deg, var(--kku-light-green) 0%, var(--kku-green) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
         }
 
-        .product-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .product-info {
-            padding: 30px;
-        }
-
-        .product-category {
-            color: var(--kku-gold);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .product-name {
+        .feature-card h3 {
             font-size: 22px;
             color: var(--kku-green);
             margin-bottom: 15px;
             font-weight: 700;
         }
 
-        .product-description {
+        .feature-card p {
             font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(26, 95, 63, 0.15);
+        }
+
+        .product-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--kku-light-green) 0%, var(--kku-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            color: var(--white);
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            color: var(--kku-gold);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 20px;
+            color: var(--kku-green);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .product-description {
+            font-size: 14px;
             color: var(--gray);
             line-height: 1.6;
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .product-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
-            padding-top: 20px;
+            gap: 15px;
+            margin-top: auto;
+            padding-top: 15px;
             border-top: 2px solid var(--light-gray);
         }
 
         .product-price {
-            font-size: 26px;
+            font-size: 24px;
             color: var(--kku-green);
             font-weight: 800;
         }
@@ -527,112 +447,94 @@
         .product-btn {
             background: var(--kku-gold);
             color: var(--white);
-            padding: 12px 28px;
+            padding: 12px 24px;
             border: none;
             border-radius: 25px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 15px;
+            font-size: 14px;
+            white-space: nowrap;
+            min-height: 44px;
+            font-family: 'Cairo', sans-serif;
         }
 
-        .product-btn:hover {
+        .product-btn:hover,
+        .product-btn:active {
             background: var(--kku-green);
             transform: scale(1.05);
         }
 
-        /* Use Cases Section */
-        .use-cases {
-            padding: 80px 30px;
-            max-width: 1400px;
-            margin: 0 auto;
+        .product-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
 
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
+        /* Use Case Card */
         .use-case-card {
-            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
-            padding: 45px;
-            border-radius: 25px;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border-right: 6px solid var(--kku-gold);
-        }
-
-        .use-case-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(26, 95, 63, 0.05) 0%, transparent 70%);
-            transition: transform 0.6s ease;
-        }
-
-        .use-case-card:hover::before {
-            transform: scale(1.5);
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-right: 5px solid var(--kku-gold);
         }
 
         .use-case-card:hover {
-            transform: translateX(-10px);
-            box-shadow: 0 15px 50px rgba(26, 95, 63, 0.15);
+            transform: translateX(-5px);
+            box-shadow: 0 12px 40px rgba(26, 95, 63, 0.15);
         }
 
         .use-case-icon {
-            font-size: 64px;
-            margin-bottom: 25px;
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
         }
 
         .use-case-title {
-            font-size: 28px;
+            font-size: 26px;
             color: var(--kku-green);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 700;
         }
 
         .use-case-description {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 25px;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
         .specs-list {
             list-style: none;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .specs-list li {
-            padding: 12px 0;
+            padding: 10px 0;
             border-bottom: 1px solid rgba(26, 95, 63, 0.1);
             color: var(--dark);
             font-weight: 500;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
+            font-size: 14px;
         }
 
         .specs-list li::before {
             content: '✓';
             color: var(--kku-gold);
             font-weight: 800;
-            font-size: 18px;
+            font-size: 16px;
+            flex-shrink: 0;
         }
 
         /* Footer */
         footer {
             background: linear-gradient(135deg, var(--kku-dark-green) 0%, var(--kku-green) 100%);
             color: var(--white);
-            padding: 60px 30px 30px;
-            margin-top: 80px;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
         }
 
         .footer-content {
@@ -640,20 +542,21 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 35px;
+            margin-bottom: 35px;
         }
 
         .footer-section h3 {
-            font-family: 'Amiri', serif;
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 22px;
+            margin-bottom: 18px;
             color: var(--kku-gold);
+            font-weight: 700;
         }
 
         .footer-section p,
         .footer-section ul {
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.8;
         }
 
@@ -662,12 +565,7 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .footer-section ul li:hover {
-            transform: translateX(-5px);
+            margin-bottom: 10px;
         }
 
         .footer-section ul li a {
@@ -682,419 +580,152 @@
 
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 25px;
             border-top: 2px solid rgba(201, 150, 43, 0.3);
-            font-size: 14px;
+            font-size: 13px;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease-out;
-        }
-
-        /* Responsive Design */
-        
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: transparent;
-            border: 2px solid var(--kku-gold);
-            color: var(--white);
-            padding: 10px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        /* Tablets and Small Laptops */
-        @media (max-width: 1024px) {
-            .header-top .container {
-                padding: 0 20px;
-            }
-
-            .logo {
-                width: 60px;
-                height: 60px;
-                font-size: 28px;
-            }
-
-            .brand-text h1 {
-                font-size: 24px;
-            }
-
-            .brand-text p {
-                font-size: 12px;
-            }
-
-            .hero h2 {
-                font-size: 42px;
-            }
-
-            .hero p {
-                font-size: 19px;
-            }
-
-            .features-grid,
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-            }
-
-            .use-cases-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        /* Mobile Devices */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            body {
-                font-size: 15px;
-            }
-
-            /* Header Mobile */
             .header-top .container {
                 flex-direction: column;
-                gap: 20px;
+                text-align: center;
+            }
+
+            .logo-section {
+                justify-content: center;
+            }
+
+            .header-actions {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .action-btn {
+                flex: 1;
+                min-width: 140px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            nav ul li a {
+                justify-content: center;
                 padding: 15px;
             }
 
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .section-title p {
+                font-size: 15px;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .product-footer {
+                flex-direction: column;
+            }
+
+            .product-btn {
+                width: 100%;
+            }
+
+            .product-price {
+                text-align: center;
+            }
+
+            .use-case-card {
+                border-right: none;
+                border-top: 5px solid var(--kku-gold);
+            }
+        }
+
+        @media (max-width: 480px) {
             .logo {
-                width: 55px;
-                height: 55px;
+                width: 50px;
+                height: 50px;
                 font-size: 24px;
             }
 
             .brand-text h1 {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .brand-text p {
                 font-size: 11px;
             }
 
-            .header-actions {
-                flex-direction: row;
-                gap: 10px;
-                width: 100%;
-                justify-content: center;
-            }
-
-            .action-btn {
-                padding: 8px 16px;
-                font-size: 13px;
-                flex: 1;
-            }
-
-            /* Navigation Mobile */
-            nav {
-                padding: 12px 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 8px;
-                padding: 0 15px;
-            }
-
-            nav ul li a {
-                font-size: 15px;
-                padding: 12px 15px;
-                display: block;
-                text-align: center;
-            }
-
-            .menu-toggle {
-                display: block;
-                margin: 0 auto;
-            }
-
-            nav ul.mobile-hidden {
-                display: none;
-            }
-
-            /* Hero Mobile */
-            .hero {
-                padding: 50px 20px;
-            }
-
             .hero h2 {
-                font-size: 32px;
-                line-height: 1.3;
-                margin-bottom: 15px;
+                font-size: 24px;
             }
 
             .hero p {
-                font-size: 16px;
-                margin-bottom: 25px;
-                line-height: 1.6;
-            }
-
-            .hero-btn {
-                padding: 14px 35px;
-                font-size: 16px;
-            }
-
-            /* Sections Mobile */
-            .features,
-            .products,
-            .use-cases {
-                padding: 50px 20px;
+                font-size: 14px;
             }
 
             .section-title h2 {
-                font-size: 28px;
+                font-size: 24px;
             }
 
-            .section-title p {
-                font-size: 15px;
-                padding: 0 10px;
-            }
-
-            /* Features Grid Mobile */
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .feature-card {
-                padding: 30px 20px;
-            }
-
-            .feature-icon {
-                font-size: 44px;
-                margin-bottom: 20px;
-            }
-
-            .feature-card h3 {
-                font-size: 20px;
-                margin-bottom: 12px;
-            }
-
-            .feature-card p {
-                font-size: 14px;
-                line-height: 1.7;
-            }
-
-            /* Products Grid Mobile */
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
+            .feature-icon,
+            .use-case-icon {
+                font-size: 40px;
             }
 
             .product-image {
-                height: 220px;
+                height: 180px;
                 font-size: 60px;
             }
-
-            .product-info {
-                padding: 25px 20px;
-            }
-
-            .product-category {
-                font-size: 12px;
-            }
-
-            .product-name {
-                font-size: 19px;
-                margin-bottom: 12px;
-            }
-
-            .product-description {
-                font-size: 14px;
-                margin-bottom: 15px;
-            }
-
-            .product-footer {
-                flex-direction: column;
-                gap: 15px;
-                align-items: stretch;
-            }
-
-            .product-price {
-                font-size: 24px;
-                text-align: center;
-            }
-
-            .product-btn {
-                width: 100%;
-                padding: 14px 28px;
-                font-size: 16px;
-            }
-
-            /* Use Cases Mobile */
-            .use-cases-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .use-case-card {
-                padding: 30px 20px;
-                border-right: none;
-                border-top: 5px solid var(--kku-gold);
-            }
-
-            .use-case-icon {
-                font-size: 52px;
-                margin-bottom: 20px;
-            }
-
-            .use-case-title {
-                font-size: 24px;
-                margin-bottom: 15px;
-            }
-
-            .use-case-description {
-                font-size: 14px;
-                line-height: 1.7;
-                margin-bottom: 20px;
-            }
-
-            .specs-list li {
-                font-size: 14px;
-                padding: 10px 0;
-            }
-
-            /* Footer Mobile */
-            footer {
-                padding: 40px 20px 20px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .footer-section h3 {
-                font-size: 20px;
-                margin-bottom: 15px;
-            }
-
-            .footer-section p,
-            .footer-section ul {
-                font-size: 14px;
-            }
-
-            .footer-section ul li {
-                margin-bottom: 10px;
-            }
-
-            .footer-bottom {
-                font-size: 12px;
-                padding-top: 20px;
-            }
         }
 
-        /* Small Mobile Devices */
-        @media (max-width: 480px) {
-            .hero h2 {
-                font-size: 26px;
-            }
-
-            .hero p {
-                font-size: 14px;
-            }
-
-            .hero-btn {
-                padding: 12px 28px;
-                font-size: 14px;
-            }
-
-            .section-title h2 {
-                font-size: 24px;
-            }
-
-            .section-title p {
-                font-size: 14px;
-            }
-
-            .logo {
-                width: 50px;
-                height: 50px;
-                font-size: 22px;
-            }
-
-            .brand-text h1 {
-                font-size: 18px;
-            }
-
-            .action-btn {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-
-            .feature-icon {
-                font-size: 38px;
-            }
-
-            .feature-card h3 {
-                font-size: 18px;
-            }
-
-            .product-name {
-                font-size: 17px;
-            }
-
-            .product-price {
-                font-size: 22px;
-            }
-
-            .use-case-icon {
-                font-size: 44px;
-            }
-
-            .use-case-title {
-                font-size: 21px;
-            }
+        /* Loading Animation */
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
         }
 
-        /* Landscape Mode for Phones */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .hero {
-                padding: 40px 20px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-
-            .hero h2 {
-                font-size: 28px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .features-grid,
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Touch Device Improvements */
-        @media (hover: none) and (pointer: coarse) {
-            .action-btn,
-            .product-btn,
-            .hero-btn,
-            nav ul li a {
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .feature-card:active {
-                transform: scale(0.98);
-            }
-
-            .product-card:active {
-                transform: scale(0.98);
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -1113,19 +744,18 @@
                 </div>
                 <div class="header-actions">
                     <button class="action-btn">تسجيل الدخول</button>
-                    <button class="action-btn">سلة المشتريات (0)</button>
+                    <button class="action-btn">السلة (<span id="cart-count">0</span>)</button>
                 </div>
             </div>
         </div>
         <nav>
             <div class="container">
-                <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
+                <button class="menu-toggle" id="menuToggle">القائمة ☰</button>
                 <ul id="navMenu">
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#products">المنتجات</a></li>
                     <li><a href="#features">المميزات</a></li>
                     <li><a href="#use-cases">حالات الاستخدام</a></li>
-                    <li><a href="#about">من نحن</a></li>
                     <li><a href="#contact">اتصل بنا</a></li>
                 </ul>
             </div>
@@ -1137,123 +767,113 @@
         <div class="hero-content">
             <h2>وجهتك الأولى لقطع الحاسب عالية الجودة</h2>
             <p>نوفر لك أفضل قطع الهاردوير مع محتوى تعليمي شامل يساعدك على اختيار ما يناسب احتياجاتك وميزانيتك</p>
-            <button class="hero-btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">استكشف المنتجات</button>
+            <button class="hero-btn" onclick="scrollToSection('products')">استكشف المنتجات</button>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="section-title">
-            <h2>لماذا نحن الخيار الأمثل؟</h2>
-            <p>نقدم تجربة تسوق فريدة تجمع بين الجودة والمعرفة والشفافية</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-card-content">
-                    <div class="feature-icon">🎓</div>
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>لماذا نحن الخيار الأمثل؟</h2>
+                <p>نقدم تجربة تسوق فريدة تجمع بين الجودة والمعرفة والشفافية</p>
+            </div>
+            <div class="grid-3">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🎓</span>
                     <h3>محتوى تعليمي شامل</h3>
-                    <p>شروحات تفصيلية لكل قطعة مع أمثلة واقعية وإرشادات واضحة تساعدك على فهم مكونات الحاسب واختيار الأنسب لك</p>
+                    <p>شروحات تفصيلية لكل قطعة مع أمثلة واقعية وإرشادات واضحة تساعدك على فهم مكونات الحاسب</p>
                 </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-card-content">
-                    <div class="feature-icon">⚙️</div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">⚙️</span>
                     <h3>فحص التوافق التلقائي</h3>
-                    <p>نظام ذكي يتحقق من توافق القطع مع بعضها البعض ويحذرك من أي مشكلة قبل إتمام الشراء</p>
+                    <p>نظام ذكي يتحقق من توافق القطع مع بعضها البعض ويحذرك من أي مشكلة قبل الشراء</p>
                 </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-card-content">
-                    <div class="feature-icon">💡</div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">💡</span>
                     <h3>اقتراحات مخصصة</h3>
-                    <p>تجميعات جاهزة حسب نوع الاستخدام والميزانية، سواء للألعاب أو التصميم أو الاستخدام المكتبي</p>
+                    <p>تجميعات جاهزة حسب نوع الاستخدام والميزانية للألعاب والتصميم والاستخدام المكتبي</p>
                 </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-card-content">
-                    <div class="feature-icon">🔍</div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🔍</span>
                     <h3>مقارنات تقنية</h3>
-                    <p>قارن بين المنتجات المختلفة بناءً على المواصفات والأداء والأسعار لاتخاذ القرار الأفضل</p>
+                    <p>قارن بين المنتجات المختلفة بناءً على المواصفات والأداء والأسعار</p>
                 </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-card-content">
-                    <div class="feature-icon">✅</div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">✅</span>
                     <h3>جودة مضمونة</h3>
                     <p>جميع المنتجات أصلية مع ضمان رسمي وخدمة ما بعد البيع الممتازة</p>
                 </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-card-content">
-                    <div class="feature-icon">🚚</div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🚚</span>
                     <h3>شحن سريع وآمن</h3>
-                    <p>توصيل سريع لجميع مناطق المملكة مع تغليف احترافي يضمن سلامة المنتجات</p>
+                    <p>توصيل سريع لجميع مناطق المملكة مع تغليف احترافي يضمن السلامة</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="products-container">
+    <section id="products" class="section" style="background: var(--light-gray);">
+        <div class="container">
             <div class="section-title">
                 <h2>أحدث المنتجات</h2>
                 <p>تشكيلة واسعة من قطع الحاسب عالية الجودة</p>
             </div>
-            <div class="products-grid">
-                <div class="product-card">
+            <div class="grid-3">
+                <div class="product-card fade-in">
                     <div class="product-image">🖥️</div>
                     <div class="product-info">
                         <div class="product-category">معالجات</div>
                         <h3 class="product-name">Intel Core i7-14700K</h3>
-                        <p class="product-description">معالج قوي بـ 20 نواة و28 خيط، مثالي للألعاب والتصميم والبرمجة المتقدمة</p>
+                        <p class="product-description">معالج قوي بـ 20 نواة و28 خيط، مثالي للألعاب والتصميم</p>
                         <div class="product-footer">
                             <span class="product-price">1,899 ريال</span>
-                            <button class="product-btn">أضف للسلة</button>
+                            <button class="product-btn" onclick="addToCart(this)">أضف للسلة</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card fade-in">
                     <div class="product-image">🎮</div>
                     <div class="product-info">
                         <div class="product-category">كروت الشاشة</div>
                         <h3 class="product-name">NVIDIA RTX 4070 Ti</h3>
-                        <p class="product-description">كرت شاشة احترافي بذاكرة 12GB GDDR6X لتجربة ألعاب استثنائية بدقة 4K</p>
+                        <p class="product-description">كرت شاشة احترافي بذاكرة 12GB لتجربة ألعاب استثنائية</p>
                         <div class="product-footer">
                             <span class="product-price">3,499 ريال</span>
-                            <button class="product-btn">أضف للسلة</button>
+                            <button class="product-btn" onclick="addToCart(this)">أضف للسلة</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card fade-in">
                     <div class="product-image">💾</div>
                     <div class="product-info">
                         <div class="product-category">اللوحات الأم</div>
                         <h3 class="product-name">ASUS ROG STRIX Z790-E</h3>
-                        <p class="product-description">لوحة أم متطورة بدعم DDR5 و PCIe 5.0 مع نظام تبريد متقدم</p>
+                        <p class="product-description">لوحة أم متطورة بدعم DDR5 و PCIe 5.0 متقدم</p>
                         <div class="product-footer">
                             <span class="product-price">1,299 ريال</span>
-                            <button class="product-btn">أضف للسلة</button>
+                            <button class="product-btn" onclick="addToCart(this)">أضف للسلة</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card fade-in">
                     <div class="product-image">🧠</div>
                     <div class="product-info">
                         <div class="product-category">ذاكرة عشوائية</div>
                         <h3 class="product-name">Corsair Vengeance RGB 32GB</h3>
-                        <p class="product-description">ذاكرة DDR5 بسرعة 6000MHz مع إضاءة RGB قابلة للتخصيص</p>
+                        <p class="product-description">ذاكرة DDR5 بسرعة 6000MHz مع إضاءة RGB</p>
                         <div class="product-footer">
                             <span class="product-price">749 ريال</span>
-                            <button class="product-btn">أضف للسلة</button>
+                            <button class="product-btn" onclick="addToCart(this)">أضف للسلة</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card fade-in">
                     <div class="product-image">💽</div>
                     <div class="product-info">
                         <div class="product-category">تخزين</div>
@@ -1261,20 +881,20 @@
                         <p class="product-description">SSD NVMe فائق السرعة بمعدل قراءة 7,450 MB/s</p>
                         <div class="product-footer">
                             <span class="product-price">899 ريال</span>
-                            <button class="product-btn">أضف للسلة</button>
+                            <button class="product-btn" onclick="addToCart(this)">أضف للسلة</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card fade-in">
                     <div class="product-image">⚡</div>
                     <div class="product-info">
                         <div class="product-category">مزودات الطاقة</div>
                         <h3 class="product-name">EVGA SuperNOVA 850W</h3>
-                        <p class="product-description">مزود طاقة بكفاءة 80+ Gold وحماية كاملة للمكونات</p>
+                        <p class="product-description">مزود طاقة بكفاءة 80+ Gold وحماية كاملة</p>
                         <div class="product-footer">
                             <span class="product-price">599 ريال</span>
-                            <button class="product-btn">أضف للسلة</button>
+                            <button class="product-btn" onclick="addToCart(this)">أضف للسلة</button>
                         </div>
                     </div>
                 </div>
@@ -1283,155 +903,161 @@
     </section>
 
     <!-- Use Cases Section -->
-    <section id="use-cases" class="use-cases">
-        <div class="section-title">
-            <h2>تجميعات مخصصة لكل احتياج</h2>
-            <p>اختر التجميعة المناسبة حسب نوع استخدامك</p>
-        </div>
-        <div class="use-cases-grid">
-            <div class="use-case-card">
-                <div class="use-case-icon">👨‍🎓</div>
-                <h3 class="use-case-title">جهاز للطالب الجامعي</h3>
-                <p class="use-case-description">تجميعة متوازنة للدراسة والبحث واستخدام برامج الأوفيس بكفاءة عالية</p>
-                <ul class="specs-list">
-                    <li>معالج Intel Core i5 أو AMD Ryzen 5</li>
-                    <li>ذاكرة 16GB RAM</li>
-                    <li>وحدة تخزين SSD 512GB</li>
-                    <li>كرت شاشة مدمج</li>
-                    <li>السعر التقريبي: 2,500 - 3,500 ريال</li>
-                </ul>
+    <section id="use-cases" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>تجميعات مخصصة لكل احتياج</h2>
+                <p>اختر التجميعة المناسبة حسب نوع استخدامك</p>
             </div>
+            <div class="grid-3">
+                <div class="use-case-card fade-in">
+                    <span class="use-case-icon">👨‍🎓</span>
+                    <h3 class="use-case-title">جهاز للطالب الجامعي</h3>
+                    <p class="use-case-description">تجميعة متوازنة للدراسة والبحث واستخدام برامج الأوفيس</p>
+                    <ul class="specs-list">
+                        <li>معالج Intel Core i5 أو AMD Ryzen 5</li>
+                        <li>ذاكرة 16GB RAM</li>
+                        <li>وحدة تخزين SSD 512GB</li>
+                        <li>كرت شاشة مدمج</li>
+                        <li>السعر: 2,500 - 3,500 ريال</li>
+                    </ul>
+                </div>
 
-            <div class="use-case-card">
-                <div class="use-case-icon">🎮</div>
-                <h3 class="use-case-title">جهاز للألعاب الإلكترونية</h3>
-                <p class="use-case-description">قوة أداء استثنائية للألعاب بدقة عالية ومعدل إطارات سلس</p>
-                <ul class="specs-list">
-                    <li>معالج Intel Core i7 أو AMD Ryzen 7</li>
-                    <li>كرت شاشة RTX 4070 أو أعلى</li>
-                    <li>ذاكرة 32GB RAM</li>
-                    <li>وحدة تخزين SSD 1TB NVMe</li>
-                    <li>السعر التقريبي: 7,000 - 10,000 ريال</li>
-                </ul>
-            </div>
+                <div class="use-case-card fade-in">
+                    <span class="use-case-icon">🎮</span>
+                    <h3 class="use-case-title">جهاز للألعاب الإلكترونية</h3>
+                    <p class="use-case-description">قوة أداء استثنائية للألعاب بدقة عالية ومعدل إطارات سلس</p>
+                    <ul class="specs-list">
+                        <li>معالج Intel Core i7 أو AMD Ryzen 7</li>
+                        <li>كرت شاشة RTX 4070 أو أعلى</li>
+                        <li>ذاكرة 32GB RAM</li>
+                        <li>وحدة تخزين SSD 1TB NVMe</li>
+                        <li>السعر: 7,000 - 10,000 ريال</li>
+                    </ul>
+                </div>
 
-            <div class="use-case-card">
-                <div class="use-case-icon">🎨</div>
-                <h3 class="use-case-title">جهاز للتصميم والمونتاج</h3>
-                <p class="use-case-description">أداء احترافي لبرامج التصميم الجرافيكي ومونتاج الفيديو</p>
-                <ul class="specs-list">
-                    <li>معالج متعدد الأنوية (12-16 نواة)</li>
-                    <li>كرت شاشة بذاكرة 12GB VRAM أو أعلى</li>
-                    <li>ذاكرة 32-64GB RAM</li>
-                    <li>وحدة تخزين SSD 2TB</li>
-                    <li>السعر التقريبي: 9,000 - 15,000 ريال</li>
-                </ul>
+                <div class="use-case-card fade-in">
+                    <span class="use-case-icon">🎨</span>
+                    <h3 class="use-case-title">جهاز للتصميم والمونتاج</h3>
+                    <p class="use-case-description">أداء احترافي لبرامج التصميم الجرافيكي ومونتاج الفيديو</p>
+                    <ul class="specs-list">
+                        <li>معالج متعدد الأنوية (12-16 نواة)</li>
+                        <li>كرت شاشة بذاكرة 12GB VRAM أو أعلى</li>
+                        <li>ذاكرة 32-64GB RAM</li>
+                        <li>وحدة تخزين SSD 2TB</li>
+                        <li>السعر: 9,000 - 15,000 ريال</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>عن المتجر</h3>
-                <p>متجر متخصص في بيع قطع الحاسب الآلي عالية الجودة مع تقديم محتوى تعليمي شامل لمساعدة العملاء على اتخاذ القرار الصحيح</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن المتجر</h3>
+                    <p>متجر متخصص في بيع قطع الحاسب الآلي عالية الجودة مع تقديم محتوى تعليمي شامل لمساعدة العملاء</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#features">المميزات</a></li>
+                        <li><a href="#use-cases">حالات الاستخدام</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>خدمة العملاء</h3>
+                    <ul>
+                        <li><a href="#">سياسة الاسترجاع</a></li>
+                        <li><a href="#">الشحن والتوصيل</a></li>
+                        <li><a href="#">الضمان</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <ul>
+                        <li>📧 info@pcstore.sa</li>
+                        <li>📱 +966 50 123 4567</li>
+                        <li>📍 أبها، المملكة العربية السعودية</li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>روابط سريعة</h3>
-                <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#products">المنتجات</a></li>
-                    <li><a href="#features">المميزات</a></li>
-                    <li><a href="#use-cases">حالات الاستخدام</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>© 2026 متجر قطع الحاسب الآلي. جميع الحقوق محفوظة.</p>
             </div>
-            <div class="footer-section">
-                <h3>خدمة العملاء</h3>
-                <ul>
-                    <li><a href="#">سياسة الاسترجاع</a></li>
-                    <li><a href="#">الشحن والتوصيل</a></li>
-                    <li><a href="#">الضمان</a></li>
-                    <li><a href="#">الأسئلة الشائعة</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>تواصل معنا</h3>
-                <ul>
-                    <li>📧 info@pcstore.sa</li>
-                    <li>📱 +966 50 123 4567</li>
-                    <li>📍 أبها، المملكة العربية السعودية</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 متجر قطع الحاسب الآلي. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const navMenu = document.getElementById('navMenu');
-            const menuToggle = document.getElementById('menuToggle');
+        // Cart functionality
+        let cartCount = 0;
+
+        function addToCart(button) {
+            const productName = button.closest('.product-card').querySelector('.product-name').textContent;
             
-            if (navMenu.style.display === 'none' || navMenu.style.display === '') {
-                navMenu.style.display = 'flex';
-                menuToggle.textContent = '✕';
-            } else {
-                navMenu.style.display = 'none';
-                menuToggle.textContent = '☰';
+            // Haptic feedback on mobile
+            if (window.navigator && window.navigator.vibrate) {
+                window.navigator.vibrate(50);
             }
+            
+            button.textContent = '✓ تمت الإضافة';
+            button.style.background = 'var(--kku-green)';
+            button.disabled = true;
+            
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+            
+            setTimeout(() => {
+                button.textContent = 'أضف للسلة';
+                button.style.background = 'var(--kku-gold)';
+                button.disabled = false;
+            }, 2000);
         }
 
-        // Close menu when clicking on a link (mobile)
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('show');
+            this.textContent = navMenu.classList.contains('show') ? 'إغلاق ✕' : 'القائمة ☰';
+        });
+
+        // Close menu when clicking on a link
         document.querySelectorAll('#navMenu a').forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
-                    const navMenu = document.getElementById('navMenu');
-                    const menuToggle = document.getElementById('menuToggle');
-                    navMenu.style.display = 'none';
-                    menuToggle.textContent = '☰';
+                    navMenu.classList.remove('show');
+                    menuToggle.textContent = 'القائمة ☰';
                 }
             });
         });
 
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            const navMenu = document.getElementById('navMenu');
-            const menuToggle = document.getElementById('menuToggle');
-            
-            if (window.innerWidth > 768) {
-                navMenu.style.display = 'flex';
-            } else {
-                navMenu.style.display = 'none';
-                menuToggle.textContent = '☰';
+        // Smooth scroll function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-        });
+        }
 
-        // Initialize menu state on load
-        window.addEventListener('load', function() {
-            const navMenu = document.getElementById('navMenu');
-            if (window.innerWidth <= 768) {
-                navMenu.style.display = 'none';
-            }
-        });
-
-        // Add smooth scrolling
+        // Smooth scrolling for all anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Add scroll animation for cards
+        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1440,84 +1066,35 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(30px)';
-                    setTimeout(() => {
-                        entry.target.style.transition = 'all 0.6s ease-out';
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 100);
+                    entry.target.style.opacity = '1';
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.feature-card, .product-card, .use-case-card').forEach(card => {
-            observer.observe(card);
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
         });
 
-        // Add to cart functionality with better mobile feedback
-        document.querySelectorAll('.product-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navMenu.classList.remove('show');
+                menuToggle.textContent = 'القائمة ☰';
+            }
+        });
+
+        // Prevent text selection on double tap
+        let lastTap = 0;
+        document.addEventListener('touchend', function(e) {
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTap;
+            if (tapLength < 500 && tapLength > 0) {
                 e.preventDefault();
-                const productName = this.closest('.product-card').querySelector('.product-name').textContent;
-                const originalText = this.textContent;
-                
-                // Add haptic feedback on mobile
-                if (window.navigator && window.navigator.vibrate) {
-                    window.navigator.vibrate(50);
-                }
-                
-                this.textContent = '✓ تمت الإضافة';
-                this.style.background = 'var(--kku-green)';
-                this.disabled = true;
-                
-                setTimeout(() => {
-                    this.textContent = originalText;
-                    this.style.background = 'var(--kku-gold)';
-                    this.disabled = false;
-                }, 2000);
-            });
-        });
-
-        // Prevent zoom on input focus (iOS)
-        document.addEventListener('touchstart', function() {}, {passive: true});
-
-        // Add active state for touch devices
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.action-btn, .product-btn, .hero-btn').forEach(btn => {
-                btn.addEventListener('touchstart', function() {
-                    this.style.opacity = '0.8';
-                });
-                btn.addEventListener('touchend', function() {
-                    this.style.opacity = '1';
-                });
-            });
-        }
-
-        // Performance optimization: lazy loading for product images
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('loaded');
-                        imageObserver.unobserve(entry.target);
-                    }
-                });
-            });
-
-            document.querySelectorAll('.product-image').forEach(img => {
-                imageObserver.observe(img);
-            });
-        }
-
-        // Update cart counter (placeholder functionality)
-        let cartCount = 0;
-        document.querySelectorAll('.product-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                cartCount++;
-                // Update cart display if needed
-            });
+            }
+            lastTap = currentTime;
         });
     </script>
 </body>
