@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -63,14 +62,14 @@
 
         .header-top {
             background: var(--kku-dark-green);
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 2px solid var(--kku-gold);
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         .header-top .container {
@@ -78,24 +77,24 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .logo {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--kku-green);
             border: 3px solid var(--kku-gold);
@@ -111,7 +110,7 @@
         .brand-text h1 {
             font-family: 'Tajawal', sans-serif;
             color: var(--kku-gold);
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 700;
             margin-bottom: 2px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -119,14 +118,14 @@
 
         .brand-text p {
             color: var(--white);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 300;
             letter-spacing: 0.5px;
         }
 
         .header-actions {
             display: flex;
-            gap: 15px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
@@ -134,11 +133,11 @@
             background: transparent;
             border: 2px solid var(--kku-gold);
             color: var(--white);
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 25px;
             cursor: pointer;
             font-family: 'Cairo', sans-serif;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -169,9 +168,9 @@
             padding: 12px 20px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 18px;
             margin: 10px auto;
-            width: calc(100% - 40px);
+            width: calc(100% - 30px);
             max-width: 300px;
             min-height: 48px;
             font-weight: bold;
@@ -183,15 +182,15 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 5px;
-            padding: 15px 0;
+            padding: 12px 0;
         }
 
         nav ul li a {
             color: var(--white);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            padding: 12px 20px;
+            padding: 10px 16px;
             border-radius: 8px;
             transition: all 0.3s ease;
             display: block;
@@ -208,7 +207,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--kku-green) 0%, var(--kku-light-green) 100%);
-            padding: 60px 20px;
+            padding: 40px 15px;
             position: relative;
             overflow: hidden;
         }
@@ -218,8 +217,8 @@
             position: absolute;
             top: -50%;
             right: -10%;
-            width: 500px;
-            height: 500px;
+            width: 300px;
+            height: 300px;
             background: radial-gradient(circle, rgba(201, 150, 43, 0.15) 0%, transparent 70%);
             animation: pulse 4s ease-in-out infinite;
         }
@@ -245,18 +244,18 @@
 
         .hero h2 {
             font-family: 'Tajawal', sans-serif;
-            font-size: 42px;
+            font-size: 32px;
             color: var(--white);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             font-weight: 700;
             line-height: 1.4;
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 16px;
             color: var(--white);
-            margin-bottom: 30px;
+            margin-bottom: 24px;
             line-height: 1.8;
             max-width: 800px;
             margin-left: auto;
@@ -266,10 +265,10 @@
         .hero-btn {
             background: var(--kku-gold);
             color: var(--white);
-            padding: 16px 40px;
+            padding: 14px 32px;
             border: none;
             border-radius: 30px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -290,19 +289,19 @@
 
         /* Section Title */
         .section {
-            padding: 60px 20px;
+            padding: 40px 15px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         .section-title h2 {
             font-family: 'Tajawal', sans-serif;
-            font-size: 36px;
+            font-size: 28px;
             color: var(--kku-green);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             position: relative;
             display: inline-block;
             font-weight: 700;
@@ -314,24 +313,24 @@
             bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 4px;
             background: var(--kku-gold);
         }
 
         .section-title p {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--gray);
             max-width: 700px;
-            margin: 20px auto 0;
+            margin: 15px auto 0;
             line-height: 1.8;
         }
 
         /* Grid Layouts */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -339,7 +338,7 @@
         /* Feature Card */
         .feature-card {
             background: var(--white);
-            padding: 35px 25px;
+            padding: 25px 20px;
             border-radius: 15px;
             box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
@@ -353,20 +352,20 @@
         }
 
         .feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 42px;
+            margin-bottom: 16px;
             display: block;
         }
 
         .feature-card h3 {
-            font-size: 22px;
+            font-size: 19px;
             color: var(--kku-green);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
         .feature-card p {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--gray);
             line-height: 1.7;
         }
@@ -388,17 +387,17 @@
         }
 
         .product-image {
-            height: 220px;
+            height: 180px;
             background: linear-gradient(135deg, var(--kku-light-green) 0%, var(--kku-green) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 70px;
+            font-size: 60px;
             color: var(--white);
         }
 
         .product-info {
-            padding: 25px;
+            padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -406,25 +405,25 @@
 
         .product-category {
             color: var(--kku-gold);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .product-name {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--kku-green);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             font-weight: 700;
         }
 
         .product-description {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--gray);
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             flex-grow: 1;
         }
 
@@ -432,14 +431,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             margin-top: auto;
-            padding-top: 15px;
+            padding-top: 12px;
             border-top: 2px solid var(--light-gray);
         }
 
         .product-price {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--kku-green);
             font-weight: 800;
         }
@@ -447,13 +446,13 @@
         .product-btn {
             background: var(--kku-gold);
             color: var(--white);
-            padding: 12px 24px;
+            padding: 10px 20px;
             border: none;
             border-radius: 25px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 14px;
+            font-size: 13px;
             white-space: nowrap;
             min-height: 44px;
             font-family: 'Cairo', sans-serif;
@@ -473,7 +472,7 @@
         /* Use Case Card */
         .use-case-card {
             background: var(--white);
-            padding: 35px 25px;
+            padding: 25px 20px;
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -486,78 +485,69 @@
         }
 
         .use-case-icon {
-            font-size: 56px;
-            margin-bottom: 20px;
+            font-size: 48px;
             display: block;
+            margin-bottom: 16px;
         }
 
         .use-case-title {
-            font-size: 26px;
+            font-size: 20px;
             color: var(--kku-green);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
         .use-case-description {
-            font-size: 15px;
+            font-size: 14px;
             color: var(--gray);
+            margin-bottom: 16px;
             line-height: 1.7;
-            margin-bottom: 20px;
         }
 
         .specs-list {
             list-style: none;
-            margin-top: 15px;
+            padding: 0;
         }
 
         .specs-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(26, 95, 63, 0.1);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 13px;
             color: var(--dark);
-            font-weight: 500;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 14px;
         }
 
-        .specs-list li::before {
-            content: '✓';
-            color: var(--kku-gold);
-            font-weight: 800;
-            font-size: 16px;
-            flex-shrink: 0;
+        .specs-list li:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--kku-green);
+            margin-top: 8px;
         }
 
         /* Footer */
         footer {
             background: linear-gradient(135deg, var(--kku-dark-green) 0%, var(--kku-green) 100%);
             color: var(--white);
-            padding: 50px 20px 20px;
-            margin-top: 60px;
+            padding: 40px 15px 20px;
         }
 
         .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 35px;
-            margin-bottom: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
         }
 
         .footer-section h3 {
-            font-family: 'Tajawal', sans-serif;
-            font-size: 22px;
-            margin-bottom: 18px;
             color: var(--kku-gold);
+            margin-bottom: 12px;
+            font-size: 18px;
             font-weight: 700;
         }
 
-        .footer-section p,
-        .footer-section ul {
+        .footer-section p {
             font-size: 14px;
-            line-height: 1.8;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .footer-section ul {
@@ -565,12 +555,13 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-section ul li a {
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
+            font-size: 14px;
             transition: color 0.3s ease;
         }
 
@@ -580,32 +571,13 @@
 
         .footer-bottom {
             text-align: center;
-            padding-top: 25px;
-            border-top: 2px solid rgba(201, 150, 43, 0.3);
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 13px;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .header-top .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .logo-section {
-                justify-content: center;
-            }
-
-            .header-actions {
-                justify-content: center;
-                width: 100%;
-            }
-
-            .action-btn {
-                flex: 1;
-                min-width: 140px;
-            }
-
             .menu-toggle {
                 display: block;
             }
@@ -631,63 +603,8 @@
                 padding: 15px;
             }
 
-            .hero h2 {
-                font-size: 28px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .hero-btn {
-                width: 100%;
-                max-width: 300px;
-            }
-
-            .section-title h2 {
-                font-size: 28px;
-            }
-
-            .section-title p {
-                font-size: 15px;
-            }
-
-            .grid-3 {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .product-footer {
-                flex-direction: column;
-            }
-
-            .product-btn {
-                width: 100%;
-            }
-
-            .product-price {
-                text-align: center;
-            }
-
-            .use-case-card {
-                border-right: none;
-                border-top: 5px solid var(--kku-gold);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
-            }
-
-            .brand-text h1 {
-                font-size: 18px;
-            }
-
-            .brand-text p {
-                font-size: 11px;
+            .hero {
+                padding: 30px 15px;
             }
 
             .hero h2 {
@@ -698,18 +615,158 @@
                 font-size: 14px;
             }
 
+            .hero-btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 30px 15px;
+            }
+
             .section-title h2 {
-                font-size: 24px;
+                font-size: 22px;
+            }
+
+            .section-title p {
+                font-size: 14px;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .feature-card {
+                padding: 20px 15px;
+            }
+
+            .feature-icon {
+                font-size: 36px;
+                margin-bottom: 12px;
+            }
+
+            .feature-card h3 {
+                font-size: 17px;
+            }
+
+            .feature-card p {
+                font-size: 13px;
+            }
+
+            .product-image {
+                height: 150px;
+                font-size: 50px;
+            }
+
+            .product-info {
+                padding: 15px;
+            }
+
+            .product-name {
+                font-size: 16px;
+            }
+
+            .product-description {
+                font-size: 12px;
+            }
+
+            .product-footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .product-btn {
+                width: 100%;
+            }
+
+            .product-price {
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .use-case-card {
+                border-right: none;
+                border-top: 5px solid var(--kku-gold);
+                padding: 20px 15px;
+            }
+
+            .use-case-icon {
+                font-size: 40px;
+                margin-bottom: 12px;
+            }
+
+            .use-case-title {
+                font-size: 18px;
+            }
+
+            .use-case-description {
+                font-size: 13px;
+            }
+
+            .specs-list li {
+                font-size: 12px;
+                padding: 6px 0;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-section h3 {
+                font-size: 16px;
+            }
+
+            .footer-section p,
+            .footer-section ul li,
+            .footer-section ul li a {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+            }
+
+            .brand-text h1 {
+                font-size: 16px;
+            }
+
+            .brand-text p {
+                font-size: 10px;
+            }
+
+            .action-btn {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .section-title h2 {
+                font-size: 20px;
             }
 
             .feature-icon,
             .use-case-icon {
-                font-size: 40px;
+                font-size: 32px;
             }
 
             .product-image {
-                height: 180px;
-                font-size: 60px;
+                height: 130px;
+                font-size: 45px;
             }
         }
 
