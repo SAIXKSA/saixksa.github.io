@@ -1,8 +1,14 @@
-
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a5f3f">
+    <meta name="description" content="متجر متخصص في بيع قطع الحاسب الآلي عالية الجودة مع محتوى تعليمي شامل">
+    <meta name="keywords" content="قطع حاسب, كمبيوتر, معالجات, كروت شاشة, ذاكرة عشوائية">
     <title>متجر قطع الحاسب الآلي - PC Hardware Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -695,34 +701,400 @@
             animation: fadeIn 1s ease-out;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 2px solid var(--kku-gold);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Tablets and Small Laptops */
+        @media (max-width: 1024px) {
+            .header-top .container {
+                padding: 0 20px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+
+            .brand-text h1 {
+                font-size: 24px;
+            }
+
+            .brand-text p {
+                font-size: 12px;
+            }
+
             .hero h2 {
-                font-size: 36px;
+                font-size: 42px;
             }
 
             .hero p {
-                font-size: 18px;
+                font-size: 19px;
+            }
+
+            .features-grid,
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+
+            /* Header Mobile */
+            .header-top .container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px;
+            }
+
+            .logo {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .brand-text h1 {
+                font-size: 20px;
+            }
+
+            .brand-text p {
+                font-size: 11px;
+            }
+
+            .header-actions {
+                flex-direction: row;
+                gap: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .action-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+                flex: 1;
+            }
+
+            /* Navigation Mobile */
+            nav {
+                padding: 12px 0;
             }
 
             nav ul {
                 flex-direction: column;
-                gap: 10px;
+                gap: 8px;
+                padding: 0 15px;
             }
 
-            .header-actions {
-                flex-direction: column;
-                gap: 10px;
+            nav ul li a {
+                font-size: 15px;
+                padding: 12px 15px;
+                display: block;
+                text-align: center;
             }
 
-            .products-grid,
-            .features-grid,
-            .use-cases-grid {
-                grid-template-columns: 1fr;
+            .menu-toggle {
+                display: block;
+                margin: 0 auto;
+            }
+
+            nav ul.mobile-hidden {
+                display: none;
+            }
+
+            /* Hero Mobile */
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+
+            .hero p {
+                font-size: 16px;
+                margin-bottom: 25px;
+                line-height: 1.6;
+            }
+
+            .hero-btn {
+                padding: 14px 35px;
+                font-size: 16px;
+            }
+
+            /* Sections Mobile */
+            .features,
+            .products,
+            .use-cases {
+                padding: 50px 20px;
             }
 
             .section-title h2 {
-                font-size: 32px;
+                font-size: 28px;
+            }
+
+            .section-title p {
+                font-size: 15px;
+                padding: 0 10px;
+            }
+
+            /* Features Grid Mobile */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 30px 20px;
+            }
+
+            .feature-icon {
+                font-size: 44px;
+                margin-bottom: 20px;
+            }
+
+            .feature-card h3 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+
+            .feature-card p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            /* Products Grid Mobile */
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .product-image {
+                height: 220px;
+                font-size: 60px;
+            }
+
+            .product-info {
+                padding: 25px 20px;
+            }
+
+            .product-category {
+                font-size: 12px;
+            }
+
+            .product-name {
+                font-size: 19px;
+                margin-bottom: 12px;
+            }
+
+            .product-description {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .product-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+
+            .product-price {
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .product-btn {
+                width: 100%;
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+
+            /* Use Cases Mobile */
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .use-case-card {
+                padding: 30px 20px;
+                border-right: none;
+                border-top: 5px solid var(--kku-gold);
+            }
+
+            .use-case-icon {
+                font-size: 52px;
+                margin-bottom: 20px;
+            }
+
+            .use-case-title {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .use-case-description {
+                font-size: 14px;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .specs-list li {
+                font-size: 14px;
+                padding: 10px 0;
+            }
+
+            /* Footer Mobile */
+            footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-section h3 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .footer-section p,
+            .footer-section ul {
+                font-size: 14px;
+            }
+
+            .footer-section ul li {
+                margin-bottom: 10px;
+            }
+
+            .footer-bottom {
+                font-size: 12px;
+                padding-top: 20px;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .hero-btn {
+                padding: 12px 28px;
+                font-size: 14px;
+            }
+
+            .section-title h2 {
+                font-size: 24px;
+            }
+
+            .section-title p {
+                font-size: 14px;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .brand-text h1 {
+                font-size: 18px;
+            }
+
+            .action-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .feature-icon {
+                font-size: 38px;
+            }
+
+            .feature-card h3 {
+                font-size: 18px;
+            }
+
+            .product-name {
+                font-size: 17px;
+            }
+
+            .product-price {
+                font-size: 22px;
+            }
+
+            .use-case-icon {
+                font-size: 44px;
+            }
+
+            .use-case-title {
+                font-size: 21px;
+            }
+        }
+
+        /* Landscape Mode for Phones */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .features-grid,
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Touch Device Improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .action-btn,
+            .product-btn,
+            .hero-btn,
+            nav ul li a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .feature-card:active {
+                transform: scale(0.98);
+            }
+
+            .product-card:active {
+                transform: scale(0.98);
             }
         }
     </style>
@@ -747,7 +1119,8 @@
         </div>
         <nav>
             <div class="container">
-                <ul>
+                <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</button>
+                <ul id="navMenu">
                     <li><a href="#home">الرئيسية</a></li>
                     <li><a href="#products">المنتجات</a></li>
                     <li><a href="#features">المميزات</a></li>
@@ -997,6 +1370,53 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (navMenu.style.display === 'none' || navMenu.style.display === '') {
+                navMenu.style.display = 'flex';
+                menuToggle.textContent = '✕';
+            } else {
+                navMenu.style.display = 'none';
+                menuToggle.textContent = '☰';
+            }
+        }
+
+        // Close menu when clicking on a link (mobile)
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    const navMenu = document.getElementById('navMenu');
+                    const menuToggle = document.getElementById('menuToggle');
+                    navMenu.style.display = 'none';
+                    menuToggle.textContent = '☰';
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            
+            if (window.innerWidth > 768) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'none';
+                menuToggle.textContent = '☰';
+            }
+        });
+
+        // Initialize menu state on load
+        window.addEventListener('load', function() {
+            const navMenu = document.getElementById('navMenu');
+            if (window.innerWidth <= 768) {
+                navMenu.style.display = 'none';
+            }
+        });
+
         // Add smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1014,7 +1434,7 @@
         // Add scroll animation for cards
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1027,6 +1447,7 @@
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                     }, 100);
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -1035,16 +1456,67 @@
             observer.observe(card);
         });
 
-        // Add to cart functionality
+        // Add to cart functionality with better mobile feedback
         document.querySelectorAll('.product-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
                 const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+                const originalText = this.textContent;
+                
+                // Add haptic feedback on mobile
+                if (window.navigator && window.navigator.vibrate) {
+                    window.navigator.vibrate(50);
+                }
+                
                 this.textContent = '✓ تمت الإضافة';
                 this.style.background = 'var(--kku-green)';
+                this.disabled = true;
+                
                 setTimeout(() => {
-                    this.textContent = 'أضف للسلة';
+                    this.textContent = originalText;
                     this.style.background = 'var(--kku-gold)';
+                    this.disabled = false;
                 }, 2000);
+            });
+        });
+
+        // Prevent zoom on input focus (iOS)
+        document.addEventListener('touchstart', function() {}, {passive: true});
+
+        // Add active state for touch devices
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.action-btn, .product-btn, .hero-btn').forEach(btn => {
+                btn.addEventListener('touchstart', function() {
+                    this.style.opacity = '0.8';
+                });
+                btn.addEventListener('touchend', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        }
+
+        // Performance optimization: lazy loading for product images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('loaded');
+                        imageObserver.unobserve(entry.target);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.product-image').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Update cart counter (placeholder functionality)
+        let cartCount = 0;
+        document.querySelectorAll('.product-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                cartCount++;
+                // Update cart display if needed
             });
         });
     </script>
