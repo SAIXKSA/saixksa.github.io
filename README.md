@@ -387,13 +387,20 @@
         }
 
         .product-image {
-            height: 180px;
-            background: linear-gradient(135deg, var(--kku-light-green) 0%, var(--kku-green) 100%);
+            height: 200px;
+            background: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
-            color: var(--white);
+            overflow: hidden;
+            padding: 20px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .product-info {
@@ -657,8 +664,8 @@
             }
 
             .product-image {
-                height: 150px;
-                font-size: 50px;
+                height: 160px;
+                padding: 15px;
             }
 
             .product-info {
@@ -765,8 +772,7 @@
             }
 
             .product-image {
-                height: 130px;
-                font-size: 45px;
+                height: 140px;
             }
         }
 
@@ -879,7 +885,9 @@
             </div>
             <div class="grid-3">
                 <div class="product-card fade-in">
-                    <div class="product-image">🖥️</div>
+                    <div class="product-image">
+                        <img src="intel-i7.png" alt="Intel Core i7-14700K">
+                    </div>
                     <div class="product-info">
                         <div class="product-category">معالجات</div>
                         <h3 class="product-name">Intel Core i7-14700K</h3>
@@ -892,7 +900,9 @@
                 </div>
 
                 <div class="product-card fade-in">
-                    <div class="product-image">🎮</div>
+                    <div class="product-image">
+                        <img src="rtx-4070.png" alt="NVIDIA RTX 4070 Ti">
+                    </div>
                     <div class="product-info">
                         <div class="product-category">كروت الشاشة</div>
                         <h3 class="product-name">NVIDIA RTX 4070 Ti</h3>
@@ -905,10 +915,12 @@
                 </div>
 
                 <div class="product-card fade-in">
-                    <div class="product-image">💾</div>
+                    <div class="product-image">
+                        <img src="asus-motherboard.png" alt="ASUS ROG MAXIMUS Z790 HERO">
+                    </div>
                     <div class="product-info">
                         <div class="product-category">اللوحات الأم</div>
-                        <h3 class="product-name">ASUS ROG STRIX Z790-E</h3>
+                        <h3 class="product-name">ASUS ROG MAXIMUS Z790 HERO</h3>
                         <p class="product-description">لوحة أم متطورة بدعم DDR5 و PCIe 5.0 متقدم</p>
                         <div class="product-footer">
                             <span class="product-price">1,299 ريال</span>
@@ -918,7 +930,9 @@
                 </div>
 
                 <div class="product-card fade-in">
-                    <div class="product-image">🧠</div>
+                    <div class="product-image">
+                        <img src="corsair-ram.png" alt="Corsair Vengeance RGB 32GB">
+                    </div>
                     <div class="product-info">
                         <div class="product-category">ذاكرة عشوائية</div>
                         <h3 class="product-name">Corsair Vengeance RGB 32GB</h3>
@@ -931,7 +945,9 @@
                 </div>
 
                 <div class="product-card fade-in">
-                    <div class="product-image">💽</div>
+                    <div class="product-image">
+                        <img src="samsung-ssd.png" alt="Samsung 990 PRO 2TB">
+                    </div>
                     <div class="product-info">
                         <div class="product-category">تخزين</div>
                         <h3 class="product-name">Samsung 990 PRO 2TB</h3>
@@ -944,7 +960,9 @@
                 </div>
 
                 <div class="product-card fade-in">
-                    <div class="product-image">⚡</div>
+                    <div class="product-image">
+                        <img src="evga-psu.png" alt="EVGA SuperNOVA 850W">
+                    </div>
                     <div class="product-info">
                         <div class="product-category">مزودات الطاقة</div>
                         <h3 class="product-name">EVGA SuperNOVA 850W</h3>
