@@ -1,5 +1,4 @@
-[tech-store (9).html](https://github.com/user-attachments/files/25163425/tech-store.9.html)
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
